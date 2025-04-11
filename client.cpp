@@ -92,7 +92,7 @@ static int32_t read_resp(int fd){
     }
 
     //do something
-    printf("server says: %s\n", len < 100 ? len: 100, &rbuf[4]); //print the first 100 bytes of the response
+    printf("server says: %.*s\n", (int)(len < 100 ? len : 100), (char*)&rbuf[4]); //print the first 100 bytes of the response
     return 0;
 }
 
