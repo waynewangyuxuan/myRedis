@@ -176,7 +176,7 @@ static void buf_append_u8(Buffer &buf, uint8_t data) {
     buf.push_back(data);
 }
 static void buf_append_u32(Buffer &buf, uint32_t data) {
-    buf_append(buf, (const uint8_t *)&data, 4); //先把这个32位数据转换成8位数据的数组，然后调用buf_append，因为vector的append函数可以接受一个数组.
+    buf_append(buf, (const uint8_t *)&data, 4);
 }
 static void buf_append_i64(Buffer &buf, int64_t data) {
     buf_append(buf, (const uint8_t *)&data, 8);
